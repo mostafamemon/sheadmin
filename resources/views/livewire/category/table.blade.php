@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="mg-b-38">
             <div class="float-right">
-                <a href="/product/add" class="btn btn-primary btn-sm wd-90"><i class="fa fa-plus-circle"></i> Add New</a>
+                <a href="/category/add" class="btn btn-primary btn-sm wd-90"><i class="fa fa-plus-circle"></i> Add New</a>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                         <td class="text-center" style="padding:12px !important;">{{ $loop->iteration }}</td>
                         <td class="text-center">
                             @if($category->category_banner != "")
-                                <img src="{{ $category->category_banner }}"/>
+                                <img src="{{ asset('storage/'.str_replace('public/', '', $category->category_banner)) }}" height="50"/>
                             @else
                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="50"/>
                             @endif
