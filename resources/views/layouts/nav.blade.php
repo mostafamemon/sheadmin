@@ -6,6 +6,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/category" class="nav-link @if(request()->is('category*')) active @endif">
+                <i class="nav-icon fas fa-network-wired"></i> <span class="menu-name">Category</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/product" class="nav-link @if(request()->is('product*')) active @endif">
                 <i class="nav-icon fas fa-cubes"></i> <span class="menu-name">Product</span>
             </a>
