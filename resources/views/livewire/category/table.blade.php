@@ -75,9 +75,9 @@
                                 Action
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item pointer tx-14" href="/category/update/{{$current_page}}/{{$category->id}}">Update</a>
+                                <a class="dropdown-item pointer tx-14" href="category/update/{{$category->id}}">Update</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item pointer tx-14" wire:click="delete('{{$category->id}}','{{ $current_page }}')">Delete</a>
+                                <a class="dropdown-item pointer tx-14" wire:click="delete({{$category->id}})">Delete</a>
                             </div>
                         </td>
                     </tr>

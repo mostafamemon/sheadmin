@@ -2,9 +2,9 @@
     <div class="col-md-12">
         <div class="card card-lightblue">
             <div class="card-header">
-                <h3 class="card-title"><i class="fa fa-plus-circle"></i> &nbsp;Add Category</h3>
+                <h3 class="card-title"><i class="fa fa-plus-circle"></i> &nbsp;Update Category</h3>
             </div>
-            <form wire:submit.prevent="store" style="margin-bottom:0px">
+            <form wire:submit.prevent="update" style="margin-bottom:0px">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
