@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('ecom_categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('parent_id')->default(0);
             $table->string('category_name');
+            $table->boolean('show_in_search_bar')->default(0);
             $table->boolean('show_in_top_menu')->default(0);
             $table->dateTime('show_in_top_menu_date')->nullable();
             $table->string('category_banner')->nullable();

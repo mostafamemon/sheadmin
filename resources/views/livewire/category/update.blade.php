@@ -16,6 +16,18 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
+                                <label>Search Bar Display</label>
+                                <div class="form-check" style="padding-top:5px">
+                                    <input class="form-check-input" wire:model="search_bar_display" type="checkbox" value="" id="search_bar_display" checked>
+                                    <label class="form-check-label" for="search_bar_display">
+                                        Enable
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
                                 <label>Top Menu Display</label>
                                 <div class="form-check" style="padding-top:5px">
                                     <input class="form-check-input" wire:model="top_menu_display" type="checkbox" value="" id="top_menu_display" checked>

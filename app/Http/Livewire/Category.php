@@ -18,6 +18,7 @@ class Category extends Component
 
     public $category_id         = "";
     public $category_name       = "";
+    public $search_bar_display  = 0;
     public $top_menu_display    = 0;
     public $home_page_display   = 0;
     public $category_banner     = "";
@@ -32,6 +33,7 @@ class Category extends Component
                 $this->category_id  = request()->category_id;
                 $category = EcomCategory::where('id',$this->category_id)->first();
                 $this->category_name        = $category->category_name;
+                $this->search_bar_display   = $category->show_in_search_bar;
                 $this->top_menu_display     = $category->show_in_top_menu;
                 $this->home_page_display    = $category->show_in_home_page;
                 if($category->category_banner != "") {
@@ -51,6 +53,8 @@ class Category extends Component
                 $categories->where('show_in_top_menu',1);
             } elseif($this->filter_by == "show_in_home_page") {
                 $categories->where('show_in_home_page',1);
+            } elseif($this->filter_by == "show_in_search_bar") {
+                $categories->where('show_in_search_bar',1);
             }
         }
         if($this->filter_name != "") {
@@ -63,6 +67,7 @@ class Category extends Component
     {
         $category                    = new EcomCategory();
         $category->category_name     = $this->category_name;
+        $category->show_in_search_bar= $this->search_bar_display;
         $category->show_in_top_menu  = $this->top_menu_display;
         $category->show_in_home_page = $this->home_page_display;
         if($this->category_banner != "") {
@@ -82,7 +87,7 @@ class Category extends Component
                 File::delete('storage/'.str_replace('public/', '', $category->category_banner));
             }
         }
-        EcomCategory::where('parent_id',$category_id)->delete();
+        EcomSubCategory::where('category_id',$category_id)->delete();
         EcomCategory::where('id',$category_id)->delete();
 
         session()->flash('message', 'Category successfully deleted!');
@@ -93,6 +98,7 @@ class Category extends Component
     {
         $category                    = EcomCategory::where('id',$this->category_id)->first();
         $category->category_name     = $this->category_name;
+        $category->show_in_search_bar= $this->search_bar_display;
         $category->show_in_top_menu  = $this->top_menu_display;
         $category->show_in_home_page = $this->home_page_display;
         if($this->category_old_banner != "") {

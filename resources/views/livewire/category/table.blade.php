@@ -22,6 +22,7 @@
             <div class="col-md-2">
                 <select wire:model="filter_by" class="form-control-filter">
                     <option value="all" style="color:green !important;font-weight:bold;">all</option>
+                    <option value="show_in_search_bar" style="color:green !important;font-weight:bold;">Search Bar Display</option>
                     <option value="show_in_top_menu" style="color:green !important;font-weight:bold;">Top Menu Display</option>
                     <option value="show_in_home_page" style="color:green !important;font-weight:bold;">Home Page Display</option>
                 </select>
@@ -38,6 +39,7 @@
                         <th class="text-center" style="padding:12px !important;">#</th>
                         <th class="text-center">Banner</th>
                         <th class="text-center">Category</th>
+                        <th class="text-center">Search Bar Display</th>
                         <th class="text-center">Top Menu Display</th>
                         <th class="text-center">Home Page Display</th>
                         <th class="text-center">Action</th>
@@ -57,6 +59,13 @@
                         </td>
                         <td>{{ $category->category_name }}</td>
                         <td class="text-center">
+                            @if($category->show_in_search_bar)
+                                <span class="badge badge-success">Enable</span>
+                            @else
+                                <span class="badge badge-danger">Disable</span>
+                            @endif
+                        </td>
+                        <td class="text-center">
                             @if($category->show_in_top_menu)
                                 <span class="badge badge-success">Enable</span>
                             @else
@@ -75,7 +84,7 @@
                                 Action
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item pointer tx-14" href="category/update/{{$category->id}}">Update</a>
+                                <a class="dropdown-item pointer tx-14" href="/category/update/{{$category->id}}">Update</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item pointer tx-14" wire:click="delete({{$category->id}})">Delete</a>
                             </div>
