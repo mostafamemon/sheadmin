@@ -19,7 +19,6 @@ class Product extends Component
 
     public $current_page        = "index";
     public $categories          = [];
-    public $products            = [];
     public $sub_categories      = [];
     public $filter_by_category  = "all";
     public $filter_by_subcategory = "all";
@@ -139,7 +138,13 @@ class Product extends Component
                 $products->where('clearense',1);
             }
         }
-        $this->products = $products->get();
+
+        if($this->filter_by_name == "" && $this->filter_by_category == "all" && $this->filter_by_subcategory == "all" && $this->filter_by == "") {
+            
+            $this->products = $products->limit(50)->get();
+        } else {
+            $this->products = $products->get();
+        }
     }
 
     public function store()
