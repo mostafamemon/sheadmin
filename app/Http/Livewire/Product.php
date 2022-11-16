@@ -8,6 +8,7 @@ use App\Models\EcomCategory;
 use App\Models\EcomSubCategory;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\File; 
 
 class Product extends Component
 {
@@ -165,9 +166,9 @@ class Product extends Component
         return redirect()->to('/product');
     }  
 
-    public function delete($category_id)
+    public function delete($product_id)
     {
-        $product = Product::where('id',$product_id)->first();
+        $product = EcomProduct::where('id',$product_id)->first();
         if($product->product_page_main_image != "") {
             if(File::exists('storage/'.str_replace('public/', '', $product->product_page_main_image))) {
                 File::delete('storage/'.str_replace('public/', '', $product->product_page_main_image));
