@@ -7,10 +7,13 @@ use App\Models\EcomProduct;
 use App\Models\EcomCategory;
 use App\Models\EcomSubCategory;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 
 class Product extends Component
 {
     use WithPagination;
+    use WithFileUploads;
+
     protected $paginationTheme = 'bootstrap';
 
     public $current_page        = "index";
@@ -24,12 +27,12 @@ class Product extends Component
 
     public $category_id         = "";
     public $sub_category_id     = "";
-    public $hot_product         = "";
-    public $new_arrival         = "";
-    public $top_selling         = "";
-    public $best_rated          = "";
-    public $clearense           = "";
-    public $user_rating         = "";
+    public $hot_product         = 0;
+    public $new_arrival         = 0;
+    public $top_selling         = 0;
+    public $best_rated          = 0;
+    public $clearense           = 0;
+    public $user_rating         = 5;
     public $product_page_main_image         = "";
     public $product_page_other_image_1      = "";
     public $product_page_other_image_2      = "";
@@ -40,12 +43,13 @@ class Product extends Component
     public $product_name        = "";
     public $short_description   = "";
     public $long_description    = "";
-    public $in_stock            = "";
+    public $in_stock            = 1;
 
     public function mount()
     {
         if (isset(request()->current_page)) {
             $this->current_page     = request()->current_page;
+            $this->categories       = EcomCategory::orderBy('category_name','asc')->get();
             if($this->current_page == "update")
             {
                 $this->product_id   = request()->product_id;
@@ -74,9 +78,15 @@ class Product extends Component
         $this->filter();
     }
 
+    public function getSubCategory()
+    {
+        $this->sub_categories = EcomSubCategory::where('category_id',$this->category_id)->orderBy('sub_category_name','asc')->get();
+    }
+
     public function filter()
     {
         $products = EcomProduct::orderBy('product_name','asc');
+        /*
         if($this->filter_by_category != "all") {
             $products->where('category_id',$this->category_id);
         }
@@ -99,14 +109,19 @@ class Product extends Component
                 $products->where('clearense',1);
             }
         }
+        */
         $this->products = $products->get();
     }
 
     public function store()
     {
         $product                                = new EcomProduct();
-        $product->category_id                   = $this->category_id;
-        $product->sub_category_id               = $this->sub_category_id;
+        if($this->category_id != "") {
+            $product->category_id                   = $this->category_id;
+        }
+        if($this->sub_category_id != "") {
+            $product->sub_category_id               = $this->sub_category_id;
+        }
         $product->hot_product                   = $this->hot_product;
         $product->new_arrival                   = $this->new_arrival;
         $product->top_selling                   = $this->top_selling;
@@ -134,9 +149,10 @@ class Product extends Component
         }
 
         $product->product_name                  = $this->product_name;
-        $product->shor_description              = $this->short_description;
+        $product->short_description             = $this->short_description;
         $product->long_description              = $this->long_description;
         $product->in_stock                      = $this->in_stock;
+        $product->save();
 
         session()->flash('message', 'Product successfully added!');
         return redirect()->to('/product');

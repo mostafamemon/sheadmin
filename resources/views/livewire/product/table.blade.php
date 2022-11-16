@@ -79,21 +79,21 @@
                             @endif
                         </td>
                         <td class="text-center">
-                            @if($category->top_selling)
+                            @if($product->top_selling)
                                 <span class="badge badge-success">Enable</span>
                             @else
                                 <span class="badge badge-danger">Disable</span>
                             @endif
                         </td>
                         <td class="text-center">
-                            @if($category->best_rated)
+                            @if($product->best_rated)
                                 <span class="badge badge-success">Enable</span>
                             @else
                                 <span class="badge badge-danger">Disable</span>
                             @endif
                         </td>
                         <td class="text-center">
-                            @if($category->clearense)
+                            @if($product->clearense)
                                 <span class="badge badge-success">Enable</span>
                             @else
                                 <span class="badge badge-danger">Disable</span>
@@ -104,7 +104,7 @@
                                 Action
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item pointer tx-14" href="/product/update/{{$category->id}}">Update</a>
+                                <a class="dropdown-item pointer tx-14" href="/product/update/{{$product->id}}">Update</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item pointer tx-14" wire:click="delete({{$product->id}})">Delete</a>
                             </div>
