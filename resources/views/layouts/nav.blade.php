@@ -15,5 +15,10 @@
                 <i class="nav-icon fa fa-th"></i> <span class="menu-name">Sub Category</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/product" class="nav-link @if(request()->is('product*')) active @endif">
+                <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Product</span>
+            </a>
+        </li>
     </ul>
 </nav>

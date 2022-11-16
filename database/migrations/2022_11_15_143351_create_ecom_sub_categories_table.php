@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('ecom_categories');
             $table->string('sub_category_name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
