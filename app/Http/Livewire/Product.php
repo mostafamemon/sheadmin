@@ -21,7 +21,7 @@ class Product extends Component
     public $products            = [];
     public $sub_categories      = [];
     public $filter_by_category  = "all";
-    public $filter_by_subcategory = "";
+    public $filter_by_subcategory = "all";
     public $filter_by_name      = "";
     public $filter_by           = "";
 
@@ -47,9 +47,9 @@ class Product extends Component
 
     public function mount()
     {
+        $this->categories       = EcomCategory::orderBy('category_name','asc')->get();
         if (isset(request()->current_page)) {
             $this->current_page     = request()->current_page;
-            $this->categories       = EcomCategory::orderBy('category_name','asc')->get();
             if($this->current_page == "update")
             {
                 $this->product_id   = request()->product_id;
@@ -83,21 +83,29 @@ class Product extends Component
         $this->sub_categories = EcomSubCategory::where('category_id',$this->category_id)->orderBy('sub_category_name','asc')->get();
     }
 
+    public function getFilterSubCategory()
+    {
+        $this->sub_categories = EcomSubCategory::where('category_id',$this->filter_by_category)->orderBy('sub_category_name','asc')->get();
+    }
+
     public function filter()
     {
         $products = EcomProduct::orderBy('product_name','asc');
-        /*
-        if($this->filter_by_category != "all") {
-            $products->where('category_id',$this->category_id);
-        }
-        if($this->filter_by_subcategory != "all") {
-            $products->where('sub_category_id',$this->sub_category_id);
-        }
         if($this->filter_by_name != "") {
             $products->where('product_name', 'like', '%' . $this->filter_by_name . '%');
         }
+        if($this->filter_by_category != "all") {
+            $products->where('category_id',$this->filter_by_category);
+        }
+        if($this->filter_by_subcategory != "all") {
+            $products->where('sub_category_id',$this->filter_by_subcategory);
+        }
         if($this->filter_by != "all") {
-            if($this->filter_by == "hot_product") {
+            if($this->filter_by == "in_stock") {
+                $products->where('in_stock',1);
+            }elseif($this->filter_by == "out_of_stock") {
+                $products->where('in_stock',0);
+            }elseif($this->filter_by == "hot_product") {
                 $products->where('hot_product',1);
             }elseif($this->filter_by == "new_arrival") {
                 $products->where('new_arrival',1);
@@ -109,7 +117,6 @@ class Product extends Component
                 $products->where('clearense',1);
             }
         }
-        */
         $this->products = $products->get();
     }
 

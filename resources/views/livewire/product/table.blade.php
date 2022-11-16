@@ -17,14 +17,34 @@
 
         <div class="row filter-div">
             <div class="col-md-2 pt-10-mini">
-                <input type="text" wire:model.lazy="filter_by_name" class="form-control-filter" placeholder="category name"/>
+                <input type="text" wire:model.lazy="filter_by_name" class="form-control-filter" placeholder="product name"/>
+            </div>
+            <div class="col-md-2">
+                <select wire:model="filter_by_category" wire:change="getFilterSubCategory" class="form-control-filter">
+                    <option value="all">all category</option>
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-2">
+                <select wire:model="filter_by_subcategory" class="form-control-filter">
+                    <option value="all">all subcategory</option>
+                    @foreach($sub_categories as $sub_category)
+                    <option value="{{ $sub_category->id }}">{{ $sub_category->sub_category_name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-md-2">
                 <select wire:model="filter_by" class="form-control-filter">
-                    <option value="all" style="color:green !important;font-weight:bold;">all</option>
-                    <option value="show_in_search_bar" style="color:green !important;font-weight:bold;">Search Bar Display</option>
-                    <option value="show_in_top_menu" style="color:green !important;font-weight:bold;">Top Menu Display</option>
-                    <option value="show_in_home_page" style="color:green !important;font-weight:bold;">Home Page Display</option>
+                    <option value="all">all</option>
+                    <option value="in_stock">In Stock</option>
+                    <option value="out_of_stock">Out of Stock</option>
+                    <option value="hot_product">Hot Product</option>
+                    <option value="new_arrival">New Arrival</option>
+                    <option value="top_selling">Top Selling</option>
+                    <option value="best_rated">Best Rated</option>
+                    <option value="clearense">Clearense</option>
                 </select>
             </div>
             <div class="col-md-1 pt-10-mini">
