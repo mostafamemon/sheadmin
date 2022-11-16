@@ -34,12 +34,20 @@ class Product extends Component
     public $best_rated          = 0;
     public $clearense           = 0;
     public $user_rating         = 5;
+
     public $product_page_main_image         = "";
     public $product_page_other_image_1      = "";
     public $product_page_other_image_2      = "";
     public $product_page_other_image_3      = "";
     public $product_page_other_image_4      = "";
     public $hot_product_image               = "";
+
+    public $product_page_main_image_old         = "";
+    public $product_page_other_image_1_old      = "";
+    public $product_page_other_image_2_old      = "";
+    public $product_page_other_image_3_old      = "";
+    public $product_page_other_image_4_old      = "";
+    public $hot_product_image_old               = "";
 
     public $product_name        = "";
     public $short_description   = "";
@@ -55,25 +63,44 @@ class Product extends Component
             {
                 $this->product_id   = request()->product_id;
                 $product = EcomProduct::where('id',$this->product_id)->first();
-                $this->category_id                      = "";
-                $this->sub_category_id     = "";
-                $this->hot_product         = "";
-                $this->new_arrival         = "";
-                $this->top_selling         = "";
-                $this->best_rated          = "";
-                $this->clearense           = "";
-                $this->user_rating         = "";
-                $this->product_page_main_image         = "";
-                $this->product_page_other_image_1      = "";
-                $this->product_page_other_image_2      = "";
-                $this->product_page_other_image_3      = "";
-                $this->product_page_other_image_4      = "";
-                $this->hot_product_image               = "";
+                $this->category_id         = $product->category_id;
+                $this->sub_categories      = EcomSubCategory::where('category_id',$this->category_id)->get();
+                $this->sub_category_id     = $product->sub_category_id;
+                $this->hot_product         = $product->hot_product;
+                $this->new_arrival         = $product->new_arrival;
+                $this->top_selling         = $product->top_selling;
+                $this->best_rated          = $product->best_rated;
+                $this->clearense           = $product->clearense;
+                $this->user_rating         = $product->user_rating;
+                if($product->product_page_main_image != "") {
+                    $this->product_page_main_image      = $product->product_page_main_image;
+                    $this->product_page_main_image_old  = $product->product_page_main_image;
+                }
+                if($product->product_page_other_image_1 != "") {
+                    $this->product_page_other_image_1      = $product->product_page_other_image_1;
+                    $this->product_page_other_image_1_old  = $product->product_page_other_image_1;
+                }
+                if($product->product_page_other_image_2 != "") {
+                    $this->product_page_other_image_2      = $product->product_page_other_image_2;
+                    $this->product_page_other_image_2_old  = $product->product_page_other_image_2;
+                }
+                if($product->product_page_other_image_3 != "") {
+                    $this->product_page_other_image_3      = $product->product_page_other_image_3;
+                    $this->product_page_other_image_3_old  = $product->product_page_other_image_3;
+                }
+                if($product->product_page_other_image_4 != "") {
+                    $this->product_page_other_image_4      = $product->product_page_other_image_4;
+                    $this->product_page_other_image_4_old  = $product->product_page_other_image_4;
+                }
+                if($product->hot_product_image != "") {
+                    $this->hot_product_image               = $product->hot_product_image;
+                    $this->hot_product_image_old           = $product->hot_product_image;
+                }
 
-                $this->product_name        = "";
-                $this->short_description   = "";
-                $this->long_description    = "";
-                $this->in_stock            = "";
+                $this->product_name        = $product->product_name;
+                $this->short_description   = $product->short_description;
+                $this->long_description    = $product->long_description;
+                $this->in_stock            = $product->in_stock;
             }
         }
         $this->filter();
@@ -203,23 +230,42 @@ class Product extends Component
 
     public function update()
     {
-        $category                    = EcomCategory::where('id',$this->category_id)->first();
-        $category->category_name     = $this->category_name;
-        $category->show_in_search_bar= $this->search_bar_display;
-        $category->show_in_top_menu  = $this->top_menu_display;
-        $category->show_in_home_page = $this->home_page_display;
-        if($this->category_old_banner != "") {
-            if(File::exists('storage/'.str_replace('public/', '', $this->category_old_banner))) {
-                File::delete('storage/'.str_replace('public/', '', $this->category_old_banner));
-            }
-        }
-        if($this->category_banner != "") {
-            $category->category_banner   = $this->category_banner->store('public/category-banners');
-        }
-        $category->save();
+        $product                                = EcomProduct::where('id',$this->product_id)->first();
+        $product->category_id                   = $this->category_id;
+        $product->sub_category_id               = $this->sub_category_id;
+        $product->hot_product                   = $this->hot_product;
+        $product->new_arrival                   = $this->new_arrival;
+        $product->top_selling                   = $this->top_selling;
+        $product->best_rated                    = $this->best_rated;
+        $product->clearense                     = $this->clearense;
 
-        session()->flash('message', 'Category successfully updated!');
-        return redirect()->to('/category');
+        if($this->product_page_main_image != "") {
+            $product->product_page_main_image      = $this->product_page_main_image->store('public/product_images');
+        }
+        if($this->product_page_other_image_1 != "") {
+            $product->product_page_other_image_1   = $this->product_page_other_image_1->store('public/product_images');
+        }
+        if($this->product_page_other_image_2 != "") {
+            $product->product_page_other_image_2   = $this->product_page_other_image_2->store('public/product_images');
+        }
+        if($this->product_page_other_image_3 != "") {
+            $product->product_page_other_image_3   = $this->product_page_other_image_3->store('public/product_images');
+        }
+        if($this->product_page_other_image_4 != "") {
+            $product->product_page_other_image_4   = $this->product_page_other_image_4->store('public/product_images');
+        }
+        if($this->hot_product_image != "") {
+            $product->hot_product_image            = $this->hot_product_image->store('public/product_images');
+        }
+
+        $product->product_name                  = $this->product_name;
+        $product->short_description             = $this->short_description;
+        $product->long_description              = $this->long_description;
+        $product->in_stock                      = $this->in_stock;
+        $product->save();
+
+        session()->flash('message', 'Product successfully updated!');
+        return redirect()->to('/product');
     }
 
     public function render()

@@ -189,7 +189,7 @@
 
                     <div class="card-footer">
                         <div class="float-left">
-                            <a href="/category" class="btn btn-warning"><i class="fa fa-chevron-left tx-14"></i> Back</a>
+                            <a href="/product" class="btn btn-warning"><i class="fa fa-chevron-left tx-14"></i> Back</a>
                         </div>
 
                         <div class="float-right">

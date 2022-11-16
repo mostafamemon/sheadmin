@@ -37,7 +37,7 @@ class Category extends Component
                 $this->top_menu_display     = $category->show_in_top_menu;
                 $this->home_page_display    = $category->show_in_home_page;
                 if($category->category_banner != "") {
-                    $this->category_banner      = $category->category_banner;
+                    $this->category_banner      = "";
                     $this->category_old_banner  = $category->category_banner;
                 }
             }
@@ -101,12 +101,13 @@ class Category extends Component
         $category->show_in_search_bar= $this->search_bar_display;
         $category->show_in_top_menu  = $this->top_menu_display;
         $category->show_in_home_page = $this->home_page_display;
-        if($this->category_old_banner != "") {
-            if(File::exists('storage/'.str_replace('public/', '', $this->category_old_banner))) {
-                File::delete('storage/'.str_replace('public/', '', $this->category_old_banner));
-            }
-        }
+        
         if($this->category_banner != "") {
+            if($this->category_old_banner != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->category_old_banner))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->category_old_banner));
+                }
+            }
             $category->category_banner   = $this->category_banner->store('public/category-banners');
         }
         $category->save();
