@@ -73,27 +73,21 @@ class Product extends Component
                 $this->clearense           = $product->clearense;
                 $this->user_rating         = $product->user_rating;
                 if($product->product_page_main_image != "") {
-                    $this->product_page_main_image      = $product->product_page_main_image;
                     $this->product_page_main_image_old  = $product->product_page_main_image;
                 }
                 if($product->product_page_other_image_1 != "") {
-                    $this->product_page_other_image_1      = $product->product_page_other_image_1;
                     $this->product_page_other_image_1_old  = $product->product_page_other_image_1;
                 }
                 if($product->product_page_other_image_2 != "") {
-                    $this->product_page_other_image_2      = $product->product_page_other_image_2;
                     $this->product_page_other_image_2_old  = $product->product_page_other_image_2;
                 }
                 if($product->product_page_other_image_3 != "") {
-                    $this->product_page_other_image_3      = $product->product_page_other_image_3;
                     $this->product_page_other_image_3_old  = $product->product_page_other_image_3;
                 }
                 if($product->product_page_other_image_4 != "") {
-                    $this->product_page_other_image_4      = $product->product_page_other_image_4;
                     $this->product_page_other_image_4_old  = $product->product_page_other_image_4;
                 }
                 if($product->hot_product_image != "") {
-                    $this->hot_product_image               = $product->hot_product_image;
                     $this->hot_product_image_old           = $product->hot_product_image;
                 }
 
@@ -241,21 +235,51 @@ class Product extends Component
 
         if($this->product_page_main_image != "") {
             $product->product_page_main_image      = $this->product_page_main_image->store('public/product_images');
+            if($this->product_page_main_image_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_main_image_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->product_page_main_image_old));
+                }
+            }
         }
         if($this->product_page_other_image_1 != "") {
             $product->product_page_other_image_1   = $this->product_page_other_image_1->store('public/product_images');
+            if($this->product_page_other_image_1_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_1_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_1_old));
+                }
+            }
         }
         if($this->product_page_other_image_2 != "") {
             $product->product_page_other_image_2   = $this->product_page_other_image_2->store('public/product_images');
+            if($this->product_page_other_image_2_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_2_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_2_old));
+                }
+            }
         }
         if($this->product_page_other_image_3 != "") {
             $product->product_page_other_image_3   = $this->product_page_other_image_3->store('public/product_images');
+            if($this->product_page_other_image_3_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_3_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_3_old));
+                }
+            }
         }
         if($this->product_page_other_image_4 != "") {
             $product->product_page_other_image_4   = $this->product_page_other_image_4->store('public/product_images');
+            if($this->product_page_other_image_4_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_4_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_4_old));
+                }
+            }
         }
         if($this->hot_product_image != "") {
             $product->hot_product_image            = $this->hot_product_image->store('public/product_images');
+            if($this->hot_product_image_old != "") {
+                if(File::exists('storage/'.str_replace('public/', '', $this->hot_product_image_old))) {
+                    File::delete('storage/'.str_replace('public/', '', $this->hot_product_image_old));
+                }
+            }
         }
 
         $product->product_name                  = $this->product_name;

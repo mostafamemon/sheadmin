@@ -130,8 +130,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_main_image != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_main_image)) }}" height="100"/>
+                                            @if($product_page_main_image_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_main_image_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
@@ -147,8 +147,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_other_image_1 != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_1)) }}" height="100"/>
+                                            @if($product_page_other_image_1_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_1_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
@@ -164,8 +164,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_other_image_2 != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_2)) }}" height="100"/>
+                                            @if($product_page_other_image_2_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_2_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
@@ -181,8 +181,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_other_image_3 != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_3)) }}" height="100"/>
+                                            @if($product_page_other_image_3_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_3_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
@@ -198,8 +198,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_other_image_4 != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_4)) }}" height="100"/>
+                                            @if($product_page_other_image_4_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_4_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
@@ -215,8 +215,8 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($hot_product_image != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $hot_product_image)) }}" height="100"/>
+                                            @if($hot_product_image_old != "") 
+                                                <img src="{{ asset('storage/'.str_replace('public/', '', $hot_product_image_old)) }}" height="100"/>
                                             @else
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
