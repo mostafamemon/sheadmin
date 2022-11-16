@@ -82,8 +82,16 @@
                             @endif
                         </td>
                         <td>{{ $product->product_name }}</td>
-                        <td>{{ $product->product_name }}</td>
-                        <td>{{ $product->product_name }}</td>
+                        <td>
+                            @if($product->category_id != 0 && $product->category_id != "")
+                                {{ get_category_name($product->category_id) }}
+                            @endif
+                        </td>
+                        <td>
+                            @if($product->sub_category_id != 0 && $product->sub_category_id != "")
+                                {{ get_sub_category_name($product->sub_category_id) }}
+                            @endif
+                        </td>
                         <td class="text-center">
                             @if($product->hot_product)
                                 <span class="badge badge-success">Enable</span>
