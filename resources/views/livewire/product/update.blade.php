@@ -136,7 +136,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Large Image</label>
+                                        <label for="formFile" class="form-label">Large Image (420x512)</label>
                                         <input class="form-control" type="file" wire:model="product_page_main_image">
                                     </div>
                                 </div>
@@ -153,7 +153,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Extra Images 1</label>
+                                        <label for="formFile" class="form-label">Extra Images 1 (420x512)</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_1">
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Extra Images 2</label>
+                                        <label for="formFile" class="form-label">Extra Images 2 (420x512)</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_2">
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Extra Images 3</label>
+                                        <label for="formFile" class="form-label">Extra Images 3 (420x512)</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_3">
                                     </div>
                                 </div>
@@ -204,7 +204,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Extra Images 4</label>
+                                        <label for="formFile" class="form-label">Extra Images 4 (420x512)</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_4">
                                     </div>
                                 </div>
@@ -221,7 +221,7 @@
                                                 <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
                                             @endif
                                         </div>
-                                        <label for="formFile" class="form-label">Hot Product Image</label>
+                                        <label for="formFile" class="form-label">Hot Product Image (120x107)</label>
                                         <input class="form-control" type="file" wire:model="hot_product_image">
                                     </div>
                                 </div>
