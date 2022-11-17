@@ -54,7 +54,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Banner</label>
+                                        <label for="formFile" class="form-label">Banner (430x632)</label>
                                         <input class="form-control" type="file" wire:model="category_banner">
                                     </div>
                                 </div>
