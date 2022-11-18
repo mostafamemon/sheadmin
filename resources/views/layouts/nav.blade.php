@@ -20,5 +20,10 @@
                 <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Product</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/banner" class="nav-link @if(request()->is('banner*')) active @endif">
+                <i class="nav-icon fa fa-image"></i> <span class="menu-name">Banners</span>
+            </a>
+        </li>
     </ul>
 </nav>
