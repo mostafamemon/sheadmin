@@ -56,20 +56,6 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Short Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
-                                    <textarea class="form-control" wire:model.lazy="short_description" style="height:100px"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Long Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
-                                    <textarea class="form-control" wire:model.lazy="long_description" style="height:100px"></textarea>
-                                </div>
-                            </div>
-
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Hot Product</label>
@@ -81,7 +67,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>New Arrival</label>
@@ -127,6 +113,30 @@
                                             Enable
                                         </label>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Short Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
+                                    <textarea class="form-control" wire:model.lazy="short_description" style="height:100px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Long Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
+                                    <textarea class="form-control" wire:model.lazy="long_description" style="height:200px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Keywords</a></label>
+                                    <textarea class="form-control" wire:model.lazy="keywords" style="height:100px"></textarea>
                                 </div>
                             </div>
                         </div>

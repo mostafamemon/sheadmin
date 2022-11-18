@@ -37,7 +37,11 @@ return new class extends Migration
             $table->string('price');
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
+            $table->string('keywords')->nullable();
             $table->boolean('in_stock')->default(1);
+
+            $table->index(['product_name','keywords']);
+
             $table->softDeletes();
             $table->timestamps();
         });

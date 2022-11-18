@@ -52,6 +52,7 @@ class Product extends Component
     public $price               = "";
     public $short_description   = "";
     public $long_description    = "";
+    public $keywords            = "";
     public $in_stock            = 1;
 
     public function mount()
@@ -95,6 +96,7 @@ class Product extends Component
                 $this->price               = $product->price;
                 $this->short_description   = $product->short_description;
                 $this->long_description    = $product->long_description;
+                $this->keywords            = $product->keywords;
                 $this->in_stock            = $product->in_stock;
             }
         }
@@ -188,6 +190,7 @@ class Product extends Component
         $product->price                         = $this->price;
         $product->short_description             = $this->short_description;
         $product->long_description              = $this->long_description;
+        $product->keywords                      = $this->keywords;
         $product->in_stock                      = $this->in_stock;
         $product->save();
 
@@ -294,6 +297,7 @@ class Product extends Component
         $product->price                         = $this->price;
         $product->short_description             = $this->short_description;
         $product->long_description              = $this->long_description;
+        $product->keywords                      = $this->keywords;
         $product->in_stock                      = $this->in_stock;
         $product->save();
 
