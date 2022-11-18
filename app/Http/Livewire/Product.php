@@ -105,11 +105,13 @@ class Product extends Component
 
     public function getSubCategory()
     {
+        $this->sub_category_id = 0;
         $this->sub_categories = EcomSubCategory::where('category_id',$this->category_id)->orderBy('sub_category_name','asc')->get();
     }
 
     public function getFilterSubCategory()
     {
+        $this->filter_by_subcategory = 0;
         $this->sub_categories = EcomSubCategory::where('category_id',$this->filter_by_category)->orderBy('sub_category_name','asc')->get();
     }
 
