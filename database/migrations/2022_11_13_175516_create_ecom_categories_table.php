@@ -17,11 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('category_name');
             $table->boolean('show_in_search_bar')->default(0);
-            $table->boolean('show_in_top_menu')->default(0);
-            $table->dateTime('show_in_top_menu_date')->nullable();
             $table->string('category_banner')->nullable();
             $table->boolean('show_in_home_page')->default(0);
-            $table->dateTime('show_in_home_page_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

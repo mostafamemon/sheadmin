@@ -6,11 +6,19 @@
                 </div>
                 <form wire:submit.prevent="update" style="margin-bottom:0px">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3">
+                    <div class="row">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Product Name</label>
                                     <input type="text" class="form-control" wire:model.lazy="product_name" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input type="text" class="form-control" wire:model.lazy="price" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -50,14 +58,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Short Description</label>
+                                    <label>Short Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
                                     <textarea class="form-control" wire:model.lazy="short_description" style="height:100px"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Long Description</label>
+                                    <label>Long Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
                                     <textarea class="form-control" wire:model.lazy="long_description" style="height:100px"></textarea>
                                 </div>
                             </div>

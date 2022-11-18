@@ -28,18 +28,6 @@
 
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label>Top Menu Display</label>
-                                <div class="form-check" style="padding-top:5px">
-                                    <input class="form-check-input" wire:model="top_menu_display" type="checkbox" value="" id="top_menu_display" checked>
-                                    <label class="form-check-label" for="top_menu_display">
-                                        Enable
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="form-group">
                                 <label>Home Page Display</label>
                                 <div class="form-check" style="padding-top:5px">
                                     <input class="form-check-input" wire:model="home_page_display" type="checkbox" value="" id="home_page_display" checked>

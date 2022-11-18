@@ -34,8 +34,9 @@ return new class extends Migration
             $table->string('hot_product_image')->nullable();
 
             $table->string('product_name');
-            $table->text('short_description');
-            $table->text('long_description');
+            $table->string('price');
+            $table->text('short_description')->nullable();
+            $table->longText('long_description')->nullable();
             $table->boolean('in_stock')->default(1);
             $table->softDeletes();
             $table->timestamps();

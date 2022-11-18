@@ -59,8 +59,9 @@
                         <th class="text-center" style="padding:12px !important;">#</th>
                         <th class="text-center">Image</th>
                         <th class="text-center">Product</th>
+                        <th class="text-center">Price</th>
                         <th class="text-center">Category</th>
-                        <th class="text-center">Sub Category</th>
+                        <th class="text-center">Stock</th>
                         <th class="text-center">Hot Product</th>
                         <th class="text-center">New Arrival</th>
                         <th class="text-center">Top Selling</th>
@@ -82,14 +83,24 @@
                             @endif
                         </td>
                         <td>{{ $product->product_name }}</td>
+                        <td>{{ $product->price }}</td>
                         <td>
+                            <div>
                             @if($product->category_id != 0 && $product->category_id != "")
                                 {{ get_category_name($product->category_id) }}
                             @endif
-                        </td>
-                        <td>
+                            </div>
+                            <div>
                             @if($product->sub_category_id != 0 && $product->sub_category_id != "")
                                 {{ get_sub_category_name($product->sub_category_id) }}
+                            @endif
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            @if($product->in_stock)
+                                <span class="badge badge-success">Enable</span>
+                            @else
+                                <span class="badge badge-danger">Disable</span>
                             @endif
                         </td>
                         <td class="text-center">

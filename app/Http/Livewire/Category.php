@@ -19,7 +19,6 @@ class Category extends Component
     public $category_id         = "";
     public $category_name       = "";
     public $search_bar_display  = 0;
-    public $top_menu_display    = 0;
     public $home_page_display   = 0;
     public $category_banner     = "";
     public $category_old_banner = "";
@@ -34,7 +33,6 @@ class Category extends Component
                 $category = EcomCategory::where('id',$this->category_id)->first();
                 $this->category_name        = $category->category_name;
                 $this->search_bar_display   = $category->show_in_search_bar;
-                $this->top_menu_display     = $category->show_in_top_menu;
                 $this->home_page_display    = $category->show_in_home_page;
                 if($category->category_banner != "") {
                     $this->category_banner      = "";
@@ -68,7 +66,6 @@ class Category extends Component
         $category                    = new EcomCategory();
         $category->category_name     = $this->category_name;
         $category->show_in_search_bar= $this->search_bar_display;
-        $category->show_in_top_menu  = $this->top_menu_display;
         $category->show_in_home_page = $this->home_page_display;
         if($this->category_banner != "") {
             $category->category_banner   = $this->category_banner->store('public/category-banners');
@@ -99,7 +96,6 @@ class Category extends Component
         $category                    = EcomCategory::where('id',$this->category_id)->first();
         $category->category_name     = $this->category_name;
         $category->show_in_search_bar= $this->search_bar_display;
-        $category->show_in_top_menu  = $this->top_menu_display;
         $category->show_in_home_page = $this->home_page_display;
         
         if($this->category_banner != "") {

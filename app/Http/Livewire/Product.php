@@ -49,6 +49,7 @@ class Product extends Component
     public $hot_product_image_old               = "";
 
     public $product_name        = "";
+    public $price               = "";
     public $short_description   = "";
     public $long_description    = "";
     public $in_stock            = 1;
@@ -91,6 +92,7 @@ class Product extends Component
                 }
 
                 $this->product_name        = $product->product_name;
+                $this->price               = $product->price;
                 $this->short_description   = $product->short_description;
                 $this->long_description    = $product->long_description;
                 $this->in_stock            = $product->in_stock;
@@ -183,6 +185,7 @@ class Product extends Component
         }
 
         $product->product_name                  = $this->product_name;
+        $product->price                         = $this->price;
         $product->short_description             = $this->short_description;
         $product->long_description              = $this->long_description;
         $product->in_stock                      = $this->in_stock;
@@ -288,6 +291,7 @@ class Product extends Component
         }
 
         $product->product_name                  = $this->product_name;
+        $product->price                         = $this->price;
         $product->short_description             = $this->short_description;
         $product->long_description              = $this->long_description;
         $product->in_stock                      = $this->in_stock;

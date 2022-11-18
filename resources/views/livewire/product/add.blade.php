@@ -7,10 +7,18 @@
                 <form wire:submit.prevent="store" style="margin-bottom:0px">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Product Name</label>
                                     <input type="text" class="form-control" wire:model.lazy="product_name" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <input type="text" class="form-control" wire:model.lazy="price" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -50,14 +58,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Short Description</label>
+                                    <label>Short Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
                                     <textarea class="form-control" wire:model.lazy="short_description" style="height:100px"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Long Description</label>
+                                    <label>Long Description &nbsp;| <a href="https://html-online.com/editor/" target="_blank">&nbsp;Use Editor</a></label>
                                     <textarea class="form-control" wire:model.lazy="long_description" style="height:100px"></textarea>
                                 </div>
                             </div>
@@ -129,7 +137,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Large Image (420x512)</label>
+                                        <label for="formFile" class="form-label">Large Image</label>
                                         <input class="form-control" type="file" wire:model="product_page_main_image">
                                     </div>
                                 </div>
@@ -139,7 +147,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Extra Images 1 (420x512)</label>
+                                        <label for="formFile" class="form-label">Extra Images 1</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_1">
                                     </div>
                                 </div>
@@ -149,7 +157,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Extra Images 2 (420x512)</label>
+                                        <label for="formFile" class="form-label">Extra Images 2</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_2">
                                     </div>
                                 </div>
@@ -159,7 +167,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Extra Images 3 (420x512)</label>
+                                        <label for="formFile" class="form-label">Extra Images 3</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_3">
                                     </div>
                                 </div>
@@ -169,7 +177,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Extra Images 4 (420x512)</label>
+                                        <label for="formFile" class="form-label">Extra Images 4</label>
                                         <input class="form-control" type="file" wire:model="product_page_other_image_4">
                                     </div>
                                 </div>
@@ -179,7 +187,7 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Hot Product Image (120x107)</label>
+                                        <label for="formFile" class="form-label">Hot Product Image</label>
                                         <input class="form-control" type="file" wire:model="hot_product_image">
                                     </div>
                                 </div>
