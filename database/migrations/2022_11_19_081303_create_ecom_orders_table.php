@@ -21,6 +21,12 @@ return new class extends Migration
             $table->integer('delivery_charge');
             $table->integer('grand_total');
             $table->dateTime('order_date_time');
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('delivery_location',20);
+            $table->string('payment_type',20);
+            $table->string('address')->nullable();
             $table->string('status',20);
             $table->timestamps();
 
