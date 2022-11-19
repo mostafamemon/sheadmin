@@ -216,23 +216,6 @@
                                 <div class="form-check">
                                     <div class="mb-3">
                                         <div>
-                                            @if($product_page_other_image_4_old != "") 
-                                                <img src="{{ asset('storage/'.str_replace('public/', '', $product_page_other_image_4_old)) }}" height="100"/>
-                                            @else
-                                                <img src="{{ asset('images/image-placeholder.jpeg') }}" height="100"/>
-                                            @endif
-                                        </div>
-                                        <label for="formFile" class="form-label">Extra Images 4 (420x512)</label>
-                                        <input class="form-control" type="file" wire:model="product_page_other_image_4">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <div class="mb-3">
-                                        <div>
                                             @if($hot_product_image_old != "") 
                                                 <img src="{{ asset('storage/'.str_replace('public/', '', $hot_product_image_old)) }}" height="100"/>
                                             @else

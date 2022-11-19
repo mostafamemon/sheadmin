@@ -187,16 +187,6 @@
                             <div class="form-group">
                                 <div class="form-check">
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Extra Images 4</label>
-                                        <input class="form-control" type="file" wire:model="product_page_other_image_4">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <div class="mb-3">
                                         <label for="formFile" class="form-label">Hot Product Image</label>
                                         <input class="form-control" type="file" wire:model="hot_product_image">
                                     </div>

@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('product_page_other_image_1')->nullable();
             $table->string('product_page_other_image_2')->nullable();
             $table->string('product_page_other_image_3')->nullable();
-            $table->string('product_page_other_image_4')->nullable();
             $table->string('hot_product_image')->nullable();
 
             $table->string('product_name');

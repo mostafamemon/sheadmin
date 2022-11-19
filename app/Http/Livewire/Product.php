@@ -38,14 +38,12 @@ class Product extends Component
     public $product_page_other_image_1      = "";
     public $product_page_other_image_2      = "";
     public $product_page_other_image_3      = "";
-    public $product_page_other_image_4      = "";
     public $hot_product_image               = "";
 
     public $product_page_main_image_old         = "";
     public $product_page_other_image_1_old      = "";
     public $product_page_other_image_2_old      = "";
     public $product_page_other_image_3_old      = "";
-    public $product_page_other_image_4_old      = "";
     public $hot_product_image_old               = "";
 
     public $product_name        = "";
@@ -181,9 +179,6 @@ class Product extends Component
         if($this->product_page_other_image_3 != "") {
             $product->product_page_other_image_3   = $this->product_page_other_image_3->store('public/product_images');
         }
-        if($this->product_page_other_image_4 != "") {
-            $product->product_page_other_image_4   = $this->product_page_other_image_4->store('public/product_images');
-        }
         if($this->hot_product_image != "") {
             $product->hot_product_image            = $this->hot_product_image->store('public/product_images');
         }
@@ -220,11 +215,8 @@ class Product extends Component
             if(File::exists('storage/'.str_replace('public/', '', $product->product_page_other_image_3))) {
                 File::delete('storage/'.str_replace('public/', '', $product->product_page_other_image_3));
             }
-        }if($product->product_page_other_image_4 != "") {
-            if(File::exists('storage/'.str_replace('public/', '', $product->product_page_other_image_4))) {
-                File::delete('storage/'.str_replace('public/', '', $product->product_page_other_image_4));
-            }
-        }if($product->hot_product_image != "") {
+        }
+        if($product->hot_product_image != "") {
             if(File::exists('storage/'.str_replace('public/', '', $product->hot_product_image))) {
                 File::delete('storage/'.str_replace('public/', '', $product->hot_product_image));
             }
@@ -275,14 +267,6 @@ class Product extends Component
             if($this->product_page_other_image_3_old != "") {
                 if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_3_old))) {
                     File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_3_old));
-                }
-            }
-        }
-        if($this->product_page_other_image_4 != "") {
-            $product->product_page_other_image_4   = $this->product_page_other_image_4->store('public/product_images');
-            if($this->product_page_other_image_4_old != "") {
-                if(File::exists('storage/'.str_replace('public/', '', $this->product_page_other_image_4_old))) {
-                    File::delete('storage/'.str_replace('public/', '', $this->product_page_other_image_4_old));
                 }
             }
         }
