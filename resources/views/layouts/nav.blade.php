@@ -25,5 +25,10 @@
                 <i class="nav-icon fa fa-image"></i> <span class="menu-name">Banners</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/text-content" class="nav-link @if(request()->is('text-content*')) active @endif">
+                <i class="nav-icon fa fa-file"></i> <span class="menu-name">Text Content</span>
+            </a>
+        </li>
     </ul>
 </nav>
