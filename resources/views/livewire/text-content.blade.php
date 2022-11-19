@@ -32,7 +32,51 @@
                         <div class="card card-lightblue">
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fa fa-plus-circle"></i> &nbsp;Text Content</h3>
-                            </div>   
+                            </div>
+                            
+                            <div class="row pd-t-10">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <div class="mb-3">
+                                                <label class="form-label">Support Email</label>
+                                                <input class="form-control" type="text" wire:model.lazy="support_email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <div class="mb-3">
+                                                <label class="form-label">Phone</label>
+                                                <input class="form-control" type="text" wire:model.lazy="phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <div class="mb-3">
+                                                <label class="form-label">Hotline</label>
+                                                <input class="form-control" type="text" wire:model.lazy="hotline">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <div class="mb-3">
+                                                <label class="form-label">Address</label>
+                                                <input class="form-control" type="text" wire:model.lazy="address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row pd-t-10">
                                 <div class="col-md-3">
                                     <div class="form-group">

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('ecom_text_contents', function (Blueprint $table) {
             $table->id();
+            $table->string('support_email')->nullable();
+            $table->string('hotline')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
+
             $table->string('facebook_link')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('instagram_link')->nullable();
