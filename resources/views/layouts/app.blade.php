@@ -4,9 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>Webwev | POS</title>
+        <title>Admin | She Collection</title>
 
-        <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/png">
+        <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/png">
         <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -34,15 +34,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <div class="nav-link pointer" id="pushmenu" data-widget="pushmenu" role="button"><i class="fas fa-bars" style="padding-top:4px"></i></div>
-                    </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="/sales" class="nav-link">Sales</a>
-                    </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="/purchase" class="nav-link">Purchase</a>
-                    </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                      <a href="/return" class="nav-link">Return</a>
                     </li>
                 </ul>
 
@@ -75,11 +66,11 @@
             <aside class="main-sidebar elevation-4 sidebar-dark-lightblue sidebar-nav">
                 <!-- Brand Logo -->
                 <a href="{{url('/')}}" class="brand-link">
-                    <img src="{{asset('img/webwev-logo.png')}}" alt="AdminLTE Logo" class="brand-image">
+                    <img src="{{asset('images/logo.png')}}" alt="AdminLTE Logo" class="brand-image">
                 </a>
 
                 <a href="{{url('/')}}" class="brand-link brand-icon collapse">
-                    <img src="{{asset('img/webwev-icon.png')}}" alt="AdminLTE Logo" class="brand-image">
+                    <img src="{{asset('images/logo.png')}}" alt="AdminLTE Logo" class="brand-image">
                 </a>
 
                 <!-- Sidebar -->

@@ -23,13 +23,13 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo" style="margin-bottom:30px">
-        <img src="{{asset('images/logo.png')}}" height="100"/>
+        <img src="{{asset('images/logo.png')}}" height="60"/>
       </div>
 
         {{ $slot }}
 
       <div class="icheck-primary text-center">
-        <a href="https://3wdevs.com" target="_blank" class="forget-password-link"><span style="color:#3C8DBC">Powered by</span> 3wDevs Solution</a>
+        <a href="http://3wDevs.com" target="_blank" class="forget-password-link"><span style="color:#3C8DBC">Powered by</span> 3wDevs Solution</a>
       </div>
     </div>
 
