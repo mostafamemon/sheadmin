@@ -22,7 +22,7 @@
                     <div class="small-box bg-lightblue">
                         <div class="inner" style="padding-left:15px;">
                             <h3 style="padding-top:5px;">{{$pending_orders}}</h3>
-                            <p style="margin-top:-5px;">Production Company</p>
+                            <p style="margin-top:-5px;">PENDING ORDERS</p>
                         </div>
                         <div class="icon"></div>
                     </div>
@@ -32,7 +32,7 @@
                     <div class="small-box bg-pink">
                         <div class="inner" style="padding-left:15px;">
                             <h3 style="padding-top:5px;">{{$todays_order}}</h3>
-                            <p style="margin-top:-5px;">Today's Order</p>
+                            <p style="margin-top:-5px;">TODAYS ORDER</p>
                         </div>
                         <div class="icon"></div>
                     </div>
@@ -42,7 +42,7 @@
                     <div class="small-box text-white" style="background-color: #1CAF9A">
                         <div class="inner" style="padding-left:15px;">
                             <h3 style="padding-top:5px;">{{$todays_sale}}</h3>
-                            <p style="margin-top:-5px;">Today's Sale</p>
+                            <p style="margin-top:-5px;">TODAYS SALE</p>
                         </div>
                         <div class="icon"></div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="small-box bg-maroon">
                         <div class="inner" style="padding-left:15px;">
                             <h3 style="padding-top:5px;">{{$this_month_sale}}</h3>
-                            <p style="margin-top:-5px;">This Month Sale</p>
+                            <p style="margin-top:-5px;">MONTHLY SALE</p>
                         </div>
                         <div class="icon"></div>
                     </div>

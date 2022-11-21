@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('status',20);
             $table->timestamps();
 
-            $table->index(['status']);
+            $table->index(['order_date_time','status']);
         });
     }
 
