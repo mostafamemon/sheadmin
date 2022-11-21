@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark page-title">Order</h1>
+                    <h1 class="m-0 text-dark page-title">Order <button onclick="window.close()" class="btn btn-danger btn-sm">Close</button></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -17,8 +17,41 @@
 
     <section class="content">
         <div class="container-fluid">
+        @if(session()->has("message"))
+            <div class="flash alert alert-success-custom alert-dismissible fade show" role="alert">
+                <strong>Well done!</strong> {{ session('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <div class="card">
             <div class="card-body">
+                <form wire:submit.prevent="change_status({{$order_id}})">
+                    <div class="row filter-div">
+                        <div class="col-md-4 pt-10-mini">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Change Status</span>
+                                </div>
+                                <select class="form-control" wire:model="update_status">
+                                    <option value="PENDING">Pending</option>
+                                    <option value="PAID">Paid</option>
+                                    <option value="PROCESSING">Processing</option>
+                                    <option value="SHIPPED">Shipped</option>
+                                    <option value="DELIVERED">Delivered</option>
+                                    <option value="CANCELLED">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <input type="submit" class="btn btn-success wd-100" value="Submit"/>
+                        </div>
+                    </div>
+                </form>
+
+                <br>
                 <div class="table-responsive">
                     <table class="table-width-expense table table-striped table-bordered table-hover">
                         <thead>
