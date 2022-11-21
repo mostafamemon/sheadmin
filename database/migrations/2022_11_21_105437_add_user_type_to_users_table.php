@@ -28,6 +28,8 @@ return new class extends Migration
         $user->delivery_location = "Dhaka";
         $user->user_type = "admin";
         $user->save();
+
+        $table->index(['name','phone']);
     }
 
     /**

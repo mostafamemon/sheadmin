@@ -8,6 +8,8 @@ use App\Http\Livewire\Product;
 use App\Http\Livewire\Banner;
 use App\Http\Livewire\TextContent;
 use App\Http\Livewire\Login;
+use App\Http\Livewire\Customer;
+use App\Http\Livewire\Report;
 
 Route::get('/login',Login::class)->name('login');
 Route::group(['middleware' => 'auth'], function () {
@@ -18,5 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/product/{current_page?}/{product_id?}',Product::class);
     Route::get('/banner',Banner::class);
     Route::get('/text-content',TextContent::class);
+    Route::get('/customer',Customer::class);
+    Route::get('/report',Report::class);
 });
 

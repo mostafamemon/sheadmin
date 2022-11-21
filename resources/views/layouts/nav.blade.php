@@ -21,6 +21,16 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/customer" class="nav-link @if(request()->is('customer*')) active @endif">
+                <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Customer</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/report" class="nav-link @if(request()->is('report*')) active @endif">
+                <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Report</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/banner" class="nav-link @if(request()->is('banner*')) active @endif">
                 <i class="nav-icon fa fa-image"></i> <span class="menu-name">Banners</span>
             </a>
