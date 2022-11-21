@@ -44,22 +44,7 @@
                 </div>
             </li>
 
-            <li class="nav-item dropdown" style="margin-left:-15px">
-                <div class="nav-link pointer force-toggle" data-toggle="dropdown" >
-                    
-                </div>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" >
-                    <div class="dropdown-divider"></div>
-                    <a href="/profile">
-                        <div class="dropdown-item">
-                            <i class="far fa-user mr-2" style="color:green"></i> My profile
-                            <span class="float-right text-muted text-sm"></span>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                   
-                </div>
-            </li>
+            @livewire('logout')
         </ul>
     </nav>
 
