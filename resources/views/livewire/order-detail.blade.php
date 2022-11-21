@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark page-title">Report</h1>
+                    <h1 class="m-0 text-dark page-title">Order</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Report</li>
+                        <li class="breadcrumb-item active">Order</li>
                     </ol>
                 </div>
             </div>
@@ -19,62 +19,10 @@
         <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-            <form wire:submit.prevent="filter">
-                <div class="row filter-div">
-                    <div class="col-md-2">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Phone</span>
-                            </div>
-                            <input type="text" class="form-control" wire:model.lazy="filter_phone" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 pt-10-mini">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Order No</span>
-                            </div>
-                            <input type="text" class="form-control" wire:model.lazy="filter_order_no" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 pt-10-mini">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Date</span>
-                            </div>
-                            <input type="date" class="form-control" wire:model.lazy="filter_date" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 pt-10-mini">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Status</span>
-                            </div>
-                            <select class="form-control" wire:model="filter_status">
-                                <option value="PENDING">Pending</option>
-                                <option value="PAID">Paid</option>
-                                <option value="PROCESSING">Processing</option>
-                                <option value="SHIPPED">Shipped</option>
-                                <option value="DELIVERED">Delivered</option>
-                                <option value="CANCELLED">Cancelled</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1">
-                        <input type="submit" class="btn btn-danger wd-100" value="Filter"/>
-                    </div>
-                </div>
-            </form>
-
                 <div class="table-responsive">
                     <table class="table-width-expense table table-striped table-bordered table-hover">
                         <thead>
-                        <tr class="bg-lightblue">
-                            <th class="text-center" style="padding:12px !important;">#</th>
+                        <tr>
                             <th class="text-center">Order No</th>
                             <th class="text-center">Order Date</th>
                             <th>Customer Info</th>
@@ -82,14 +30,11 @@
                             <th class="text-center">Price</th>
                             <th class="text-center">Delivery</th>
                             <th class="text-center">Total</th>
-                            <th class="text-center">Action</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($orders as $order)
                                 <tr>
-                                    <td class="text-center">{{ $loop->iteration }}</td>
                                     <td class="text-center">{{ str_pad($order->id, 8, '0', STR_PAD_LEFT) }}</td>
                                     <td class="text-center">{{ date('d M, Y',strtotime($order->order_date_time)) }}</td>
                                     <td>
@@ -122,17 +67,37 @@
                                     <td class="text-center">{{ $order->total }}</td>
                                     <td class="text-center">{{ $order->delivery_charge }}</td>
                                     <td class="text-center">{{ $order->grand_total }}</td>
-                                    <td class="text-center">
-                                        <a class="btn btn-info btn-sm" href="order-details?order_id={{ $order->id }}" target="_blank">Details</button>
-                                    </td>
                                 </tr>
-                            @endforeach
                         </tbody>
 
                     </table>
                 </div>
 
-                <div class="pd-t-10">
+                <div class="table-responsive">
+                    <table class="table-width-expense table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr class="bg-lightblue">
+                            <th class="text-center">#</th>
+                            <th>Product</th>
+                            <th class="text-center">Unit Price</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach($order_details as $detail)
+                            <tr>
+                              <td class="text-center">{{ $loop->iteration }}</td>   
+                              <td>{{ get_product_name($detail->product_id) }}</td>  
+                              <td class="text-center">{{ $detail->unit_price }}</td>  
+                              <td class="text-center">{{ $detail->quantity }}</td>  
+                              <td class="text-center">{{ $detail->grand_total }}</td>  
+                            </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
                 </div>
             </div>
         </div>

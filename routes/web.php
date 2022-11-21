@@ -10,6 +10,7 @@ use App\Http\Livewire\TextContent;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Customer;
 use App\Http\Livewire\Report;
+use App\Http\Livewire\OrderDetail;
 
 Route::get('/login',Login::class)->name('login');
 Route::group(['middleware' => 'auth'], function () {
@@ -22,5 +23,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/text-content',TextContent::class);
     Route::get('/customer',Customer::class);
     Route::get('/report',Report::class);
+    Route::get('/order-details',OrderDetail::class);
 });
 

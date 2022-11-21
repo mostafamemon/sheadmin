@@ -9,7 +9,6 @@ use App\Models\EcomOrderDetail;
 class Report extends Component
 {
     public $orders = [];
-    public $order_details = [];
 
     public $filter_order_no = "";
     public $filter_phone = "";
