@@ -22,12 +22,12 @@
         </li>
         <li class="nav-item">
             <a href="/customer" class="nav-link @if(request()->is('customer*')) active @endif">
-                <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Customer</span>
+                <i class="nav-icon fa fa-user"></i> <span class="menu-name">Customer</span>
             </a>
         </li>
         <li class="nav-item">
             <a href="/report" class="nav-link @if(request()->is('report*')) active @endif">
-                <i class="nav-icon fa fa-cube"></i> <span class="menu-name">Report</span>
+                <i class="nav-icon fa fa-indent"></i> <span class="menu-name">Report</span>
             </a>
         </li>
         <li class="nav-item">

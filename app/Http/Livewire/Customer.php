@@ -4,12 +4,9 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
-use Livewire\WithPagination;
 
 class Customer extends Component
 {
-    use WithPagination;
-
     public $users = [];
     public $filter_phone = "";
     public $filter_name = "";
