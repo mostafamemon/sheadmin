@@ -4,11 +4,21 @@ use App\Models\EcomSubCategory;
 use App\Models\EcomProduct;
 
 function get_category_name($category_id) {
-    return EcomCategory::where('id',$category_id)->first()->category_name;
+    $name = EcomCategory::where('id',$category_id)->first();
+    if($name != "") {
+        return $name->category_name;
+    } else {
+        return "";
+    }
 }
 
 function get_sub_category_name($sub_category_id) {
-    return EcomSubCategory::where('id',$sub_category_id)->first()->sub_category_name;
+    $name = EcomSubCategory::where('id',$sub_category_id)->first();
+    if($name != "") {
+        return $name->sub_category_name;
+    } else {
+        return "";
+    }
 }
 
 function get_product_name($product_id) {
