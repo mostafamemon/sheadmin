@@ -221,7 +221,7 @@ class Product extends Component
                 File::delete('storage/'.str_replace('public/', '', $product->hot_product_image));
             }
         }
-        EcomProduct::where('id',$product_id)->delete();
+        EcomProduct::where('id',$product_id)->update('deleted_at',date('Y-m-d H:i:s'));
 
         session()->flash('message', 'Product successfully deleted!');
         return redirect()->to('/product');
