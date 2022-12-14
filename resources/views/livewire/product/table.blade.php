@@ -144,8 +144,10 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item pointer tx-14" href="/product/update/{{$product->id}}">Update</a>
+                                {{--
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item pointer tx-14" wire:click="delete({{$product->id}})">Delete</a>
+                                --}}
                             </div>
                         </td>
                     </tr>
