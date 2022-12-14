@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\EcomCategory;
+use App\Models\EcomSubCategory;
 use Illuminate\Support\Facades\File; 
 
 class Category extends Component
